@@ -10,7 +10,7 @@ import { Reveal } from "../primitives";
 
 export function Faq() {
   return (
-    <section id="faq" className="relative mx-auto max-w-3xl px-6 py-24">
+    <section id="faq" className="section-shell max-w-3xl overflow-x-clip">
       <SectionHeader kicker="FAQ" title="Perguntas frequentes" />
       <Reveal delay={0.1}>
         <Accordion type="single" collapsible className="mt-12 space-y-4">

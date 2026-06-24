@@ -3,7 +3,7 @@ import { STATS } from "../data";
 
 export function Stats() {
   return (
-    <section className="relative mx-auto max-w-6xl px-6 py-20">
+    <section className="relative mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
         {STATS.map((s, i) => (
           <Reveal key={s.label} delay={i * 0.08}>

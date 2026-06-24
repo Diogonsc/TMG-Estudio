@@ -18,11 +18,11 @@ import {
 
 export default function LandingPage() {
   return (
-    <div className="relative min-h-screen bg-background">
+    <div className="relative min-h-screen w-full max-w-full overflow-x-clip bg-background">
       <div className="pointer-events-none fixed inset-0 z-[1] bg-grain opacity-[0.025]" aria-hidden />
       <MouseSpotlight />
       <Navbar />
-      <main>
+      <main className="w-full overflow-x-clip">
         <Hero />
         <Stats />
         <About />

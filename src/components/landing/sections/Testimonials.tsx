@@ -8,20 +8,23 @@ export function Testimonials() {
   const row = [...TESTIMONIALS, ...TESTIMONIALS];
 
   return (
-    <section className="relative overflow-hidden py-24">
+    <section className="relative w-full overflow-x-clip py-16 sm:py-24">
       <SectionHeader
         kicker="Depoimentos"
         title="★★★★★ 5.0 no Google"
-        className="px-6"
+        className="px-4 sm:px-6"
       />
-      <div className="relative mt-14 flex">
+      <div className="relative mt-10 w-full overflow-hidden sm:mt-14">
         <motion.div
-          className="flex shrink-0 gap-5 pr-5"
+          className="flex w-max shrink-0 gap-4 pr-4 sm:gap-5 sm:pr-5"
           animate={{ x: ["0%", "-50%"] }}
           transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
         >
           {row.map((t, i) => (
-            <div key={`${t.name}-${i}`} className="w-[320px] shrink-0 rounded-3xl glass p-7">
+            <div
+              key={`${t.name}-${i}`}
+              className="w-[min(85vw,20rem)] shrink-0 rounded-3xl glass p-5 sm:w-80 sm:p-7"
+            >
               <div className="flex text-purple-neon">
                 {Array.from({ length: 5 }).map((_, j) => (
                   <Star key={j} className="h-4 w-4 fill-current" />
@@ -29,12 +32,12 @@ export function Testimonials() {
               </div>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">"{t.text}"</p>
               <div className="mt-5 flex items-center gap-3">
-                <span className="grid h-10 w-10 place-items-center rounded-full bg-[var(--gradient-purple)] font-bold text-white">
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gradient-purple font-bold text-white">
                   {t.name.charAt(0)}
                 </span>
-                <div>
-                  <p className="text-sm font-semibold">{t.name}</p>
-                  <p className="text-xs text-muted-foreground">{t.role}</p>
+                <div className="min-w-0">
+                  <p className="truncate text-sm font-semibold">{t.name}</p>
+                  <p className="truncate text-xs text-muted-foreground">{t.role}</p>
                 </div>
               </div>
             </div>

@@ -4,7 +4,7 @@ import { Reveal } from "../primitives";
 
 export function Process() {
   return (
-    <section id="processo" className="relative mx-auto max-w-6xl px-6 py-24">
+    <section id="processo" className="section-shell overflow-x-clip">
       <SectionHeader kicker="Processo" title="Como funciona" />
       <div className="relative mt-16 grid grid-cols-2 gap-8 md:grid-cols-5">
         <div className="absolute left-0 right-0 top-7 hidden h-px bg-gradient-to-r from-transparent via-purple-neon/40 to-transparent md:block" />

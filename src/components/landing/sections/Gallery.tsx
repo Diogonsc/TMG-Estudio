@@ -9,7 +9,7 @@ export function Gallery() {
   const [active, setActive] = useState<string | null>(null);
 
   return (
-    <section id="galeria" className="relative mx-auto max-w-6xl px-6 py-24">
+    <section id="galeria" className="section-shell overflow-x-clip">
       <SectionHeader kicker="Galeria" title="Por dentro do estúdio" />
       <div className="mt-14 columns-2 gap-4 md:columns-3 [&>*]:mb-4">
         {GALLERY_IMAGES.map((im, i) => (

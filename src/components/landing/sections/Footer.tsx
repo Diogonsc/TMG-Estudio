@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button";
 export function Footer() {
   return (
     <footer className="border-t border-white/10 bg-card/40">
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-3">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 sm:py-16 md:grid-cols-3">
         <div>
           <Logo />
           <p className="mt-4 max-w-xs text-sm text-muted-foreground">

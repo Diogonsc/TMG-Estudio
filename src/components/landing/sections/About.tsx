@@ -10,13 +10,13 @@ export function About() {
   };
 
   return (
-    <section id="sobre" className="relative mx-auto max-w-6xl px-6 py-24">
+    <section id="sobre" className="section-shell overflow-x-clip">
       <FloatingOrb className="-left-20 top-20" size={350} />
       <Reveal className="mx-auto max-w-3xl text-center">
         <span className="text-sm font-semibold uppercase tracking-widest text-purple-neon">
           Sobre o TMG
         </span>
-        <h2 className="mt-3 text-3xl font-extrabold sm:text-5xl">
+        <h2 className="mt-3 text-2xl font-extrabold sm:text-3xl md:text-5xl">
           Gravar não é suficiente. <span className="text-gradient">Posicionar</span> é o que muda o
           jogo.
         </h2>

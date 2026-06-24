@@ -51,7 +51,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="servicos" className="relative mx-auto max-w-6xl px-6 py-24">
+    <section id="servicos" className="section-shell overflow-x-clip">
       <SectionHeader kicker="Serviços" title="Tudo o que sua marca precisa" />
       <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((it, i) => (
@@ -65,7 +65,7 @@ export function Services() {
                   className="h-full w-full object-cover opacity-70 transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
-                <span className="absolute bottom-3 left-4 grid h-10 w-10 place-items-center rounded-xl bg-[var(--gradient-purple)] shadow-[var(--glow-purple)]">
+                <span className="absolute bottom-3 left-4 grid h-10 w-10 place-items-center rounded-xl bg-gradient-purple shadow-[var(--glow-purple)]">
                   <it.icon className="h-5 w-5 text-white" />
                 </span>
               </div>
