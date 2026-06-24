@@ -1,0 +1,14 @@
+export { About } from "./About";
+export { Audience } from "./Audience";
+export { Differentials } from "./Differentials";
+export { Faq } from "./Faq";
+export { FinalCta } from "./FinalCta";
+export { FloatingWhatsApp } from "./FloatingWhatsApp";
+export { Footer } from "./Footer";
+export { Gallery } from "./Gallery";
+export { Hero } from "./Hero";
+export { Navbar } from "./Navbar";
+export { Process } from "./Process";
+export { Services } from "./Services";
+export { Stats } from "./Stats";
+export { Testimonials } from "./Testimonials";
