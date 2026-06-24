@@ -24,8 +24,7 @@ export function Footer() {
             <StarRating className="h-3 w-3" />
             Avaliação máxima no Google
           </div>
-          <div className="mt-5">
-          </div>
+          <div className="mt-5"></div>
         </div>
         <div>
           <h3 className="font-display font-bold">Contato</h3>
@@ -75,7 +74,19 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10 py-6 text-center text-xs flex gap-2 items-center justify-center">
-        © {new Date().getFullYear()} TMG Estúdio. Todos os direitos reservados. | <span className="text-purple-neon">Desenvolvido por <a href="https://www.instagram.com/guilherme_costa_/" target="_blank" rel="noopener noreferrer" className="text-purple-neon hover:text-foreground">Diogo Nascimento</a> </span>
+        © {new Date().getFullYear()} TMG Estúdio. Todos os direitos reservados.
+        |{" "}
+        <span className="text-purple-neon">
+          <a
+            href="https://wa.me/5521973819373"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-purple-neon hover:underline"
+            >
+            Desenvolvido por{" "}
+            Diogo Nascimento
+          </a>{" "}
+        </span>
       </div>
     </footer>
   );
