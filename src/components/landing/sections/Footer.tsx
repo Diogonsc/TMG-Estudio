@@ -94,7 +94,7 @@ export function Footer() {
                 className="flex min-h-11 items-center gap-3 py-1 transition-colors hover:text-foreground"
               >
                 <MapPin className="h-4 w-4 shrink-0 text-purple-neon" />
-                <span>{LOCATION}</span>
+                <span>{ADDRESS_STREET} - {ADDRESS_AREA}</span>
               </a>
             </li>
           </ul>
