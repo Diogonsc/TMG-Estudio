@@ -35,7 +35,7 @@ export function Hero() {
 
       <div className="relative z-10 w-full max-w-5xl px-4 text-center sm:px-6">
         <BlurReveal>
-          <h1 className="text-balance text-[2rem] font-extrabold leading-[1.05] tracking-tight text-white drop-shadow-[0_2px_32px_rgba(0,0,0,0.8)] sm:text-6xl md:text-7xl lg:text-8xl">
+          <h1 className="mt-4 text-balance text-[2rem] font-extrabold leading-[1.05] tracking-tight text-white drop-shadow-[0_2px_32px_rgba(0,0,0,0.8)] sm:text-6xl md:text-7xl lg:text-8xl">
             Seu podcast merece mais do que uma{" "}
             <span className="text-gradient">gravação</span>.
           </h1>
