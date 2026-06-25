@@ -15,12 +15,18 @@ import {
 } from "lucide-react";
 
 import {
-  galleryBts,
-  galleryGear,
-  galleryHost,
-  galleryMic,
-  heroStudio,
-  studioRoom,
+  gallery01,
+  gallery02,
+  gallery04,
+  gallery05,
+  gallery06,
+  gallery07,
+  teamHost,
+  teamOwner,
+  cliente01,
+  cliente02,
+  cliente03,
+  cliente04,
 } from "./assets";
 
 export const NAV_LINKS = [
@@ -32,9 +38,9 @@ export const NAV_LINKS = [
 ] as const;
 
 export const STATS = [
-  { value: 100, suffix: "+", label: "Podcasts Produzidos" },
-  { value: 500, suffix: "+", label: "Horas Gravadas" },
-  { value: 50, suffix: "+", label: "Clientes Atendidos" },
+  { value: 500, suffix: "+", label: "Podcasts Produzidos" },
+  { value: 1000, suffix: "+", label: "Horas Gravadas" },
+  { value: 200, suffix: "+", label: "Clientes Atendidos" },
   { value: 5, suffix: "★", label: "Estrelas no Google", decimals: 0 },
 ] as const;
 
@@ -65,12 +71,60 @@ export const PROCESS_STEPS: { icon: LucideIcon; title: string }[] = [
 ];
 
 export const GALLERY_IMAGES = [
-  { src: galleryMic, alt: "Microfone profissional" },
-  { src: galleryBts, alt: "Bastidores da gravação" },
-  { src: galleryGear, alt: "Equipamentos do estúdio" },
-  { src: galleryHost, alt: "Host gravando podcast" },
-  { src: studioRoom, alt: "Sala do estúdio" },
-  { src: heroStudio, alt: "Gravação de podcast" },
+  { src: gallery01, alt: "Estúdio TMG — ambiente de gravação" },
+  { src: gallery02, alt: "Equipamentos profissionais do estúdio" },
+  { src: gallery04, alt: "Bastidores de produção audiovisual" },
+  { src: gallery05, alt: "Gravação em andamento no estúdio" },
+  { src: gallery06, alt: "Estrutura e iluminação do estúdio" },
+  { src: gallery07, alt: "Produção de conteúdo no TMG Estúdio" },
+] as const;
+
+export const STUDIO_VIDEOS = [
+  {
+    src: "/videos/studio-01.mp4",
+    poster: gallery01,
+    title: "Tour pelo estúdio",
+  },
+  {
+    src: "/videos/studio-02.mp4",
+    poster: gallery02,
+    title: "Equipamentos em ação",
+  },
+  {
+    src: "/videos/studio-03.mp4",
+    poster: gallery07,
+    title: "Produção de podcast",
+  },
+  {
+    src: "/videos/studio-04.mp4",
+    poster: gallery04,
+    title: "Bastidores da gravação",
+  },
+  {
+    src: "/videos/studio-05.mp4",
+    poster: gallery05,
+    title: "Gravação em andamento",
+  },
+  {
+    src: "/videos/studio-06.mp4",
+    poster: gallery06,
+    title: "Estrutura do TMG Estúdio",
+  },
+] as const;
+
+export const TEAM_MEMBERS = [
+  {
+    image: teamOwner,
+    role: "Responsável Técnico",
+    description:
+      "Responsável pela operação técnica do estúdio, direção de gravação, captação de áudio e vídeo e garantia da qualidade das produções realizadas no TMG Estúdio.",
+  },
+  {
+    image: teamHost,
+    role: "Host e Atendimento",
+    description:
+      "Recepção dos convidados, suporte durante as gravações e condução da experiência dentro do estúdio, garantindo conforto, organização e profissionalismo em cada produção.",
+  },
 ] as const;
 
 export const TESTIMONIALS = [
@@ -119,3 +173,27 @@ export const FAQ_ITEMS = [
     a: "Não. Nossa direção de conteúdo orienta você em cada etapa para extrair o melhor da sua comunicação.",
   },
 ] as const;
+
+
+export const CLIENTES_IMAGES = [
+  {
+    src: cliente01,
+    alt: "Cliente 01",
+    name: "Papo de Crente Cast"
+  },
+  {
+    src: cliente02,
+    alt: "Cliente 02",
+    name: "Brabo Cast"
+  },
+  {
+    src: cliente03,
+    alt: "Cliente 03",
+    name: "TMG Cast"
+  },
+  {
+    src: cliente04,
+    alt: "Cliente 04",
+    name: "Alini Cast"
+  }
+]

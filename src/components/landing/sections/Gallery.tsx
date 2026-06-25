@@ -13,10 +13,10 @@ export function Gallery() {
       <SectionHeader kicker="Galeria" title="Por dentro do estúdio" />
       <div className="mt-14 columns-2 gap-4 md:columns-3 [&>*]:mb-4">
         {GALLERY_IMAGES.map((im, i) => (
-          <Reveal key={im.alt} delay={(i % 3) * 0.06}>
+          <Reveal key={im.src} delay={(i % 3) * 0.06}>
             <button
               onClick={() => setActive(im.src)}
-              className="group block w-full overflow-hidden rounded-2xl glass"
+              className="group block w-full overflow-hidden rounded-2xl glass transition-all hover:-translate-y-2 hover:glow-purple"
             >
               <img
                 src={im.src}

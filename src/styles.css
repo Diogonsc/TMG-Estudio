@@ -114,6 +114,8 @@
   --font-sans: "Plus Jakarta Sans", sans-serif;
   --animate-pulse-cta: pulse-cta 2s ease-out infinite;
   --animate-pulse-purple: pulse-purple 2.5s ease-out infinite;
+  --animate-marquee: marquee 45s linear infinite;
+  --animate-marquee-reverse: marquee-reverse 45s linear infinite;
 }
 
 @keyframes pulse-purple {
@@ -146,6 +148,24 @@
   }
   100% {
     box-shadow: var(--glow-green), 0 0 0 0 oklch(0.78 0.23 145 / 0);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marquee-reverse {
+  from {
+    transform: translate3d(-50%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
   }
 }
 

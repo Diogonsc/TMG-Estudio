@@ -2,6 +2,7 @@ import { MouseSpotlight } from "./primitives";
 import {
   About,
   Audience,
+  Clients,
   Differentials,
   Faq,
   FinalCta,
@@ -13,6 +14,8 @@ import {
   Process,
   Services,
   Stats,
+  StudioVideos,
+  Team,
   Testimonials,
 } from "./sections";
 
@@ -30,7 +33,10 @@ export default function LandingPage() {
         <Differentials />
         <Services />
         <Process />
+        <Clients />
         <Gallery />
+        <StudioVideos />
+        <Team />
         <Testimonials />
         <Faq />
         <FinalCta />

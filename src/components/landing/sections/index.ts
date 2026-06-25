@@ -1,5 +1,6 @@
 export { About } from "./About";
 export { Audience } from "./Audience";
+export { Clients } from "./Clients";
 export { Differentials } from "./Differentials";
 export { Faq } from "./Faq";
 export { FinalCta } from "./FinalCta";
@@ -11,4 +12,6 @@ export { Navbar } from "./Navbar";
 export { Process } from "./Process";
 export { Services } from "./Services";
 export { Stats } from "./Stats";
+export { StudioVideos } from "./StudioVideos";
+export { Team } from "./Team";
 export { Testimonials } from "./Testimonials";

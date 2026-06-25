@@ -1,10 +1,11 @@
 import { Instagram, Mail, MapPin, Phone } from "lucide-react";
-import { FaWhatsapp } from "react-icons/fa6";
+import { FaWhatsapp, FaThreads, FaInstagram } from "react-icons/fa6";
 import {
   EMAIL,
   INSTAGRAM_LINK,
   LOCATION,
   PHONE_DISPLAY,
+  THREADS_LINK,
   WHATSAPP_LINK,
 } from "@/lib/site";
 import { Logo } from "../components/Logo";
@@ -49,7 +50,17 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 hover:text-foreground"
               >
-                <Instagram className="h-4 w-4 text-purple-neon" /> @tmgestudio
+                <FaInstagram className="h-4 w-4 text-purple-neon" /> @tmgestudio
+              </a>
+            </li>
+            <li>
+              <a
+                href={THREADS_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-foreground"
+              >
+                <FaThreads className="h-4 w-4 text-purple-neon" /> @tmgestudio
               </a>
             </li>
             <li className="flex items-center gap-2">
