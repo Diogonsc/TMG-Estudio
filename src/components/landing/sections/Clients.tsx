@@ -23,7 +23,7 @@ function Track({ items }: { items: LogoItem[] }) {
       {items.map((item, index) => (
         <div
           key={`${item.name}-${index}`}
-          className="group mx-[35px] flex shrink-0 flex-col items-center gap-3"
+          className="group mx-[35px] flex w-max shrink-0 flex-col items-center gap-3"
         >
           <img
             src={item.src}
@@ -31,7 +31,7 @@ function Track({ items }: { items: LogoItem[] }) {
             loading="lazy"
             className="h-[70px] w-[98px] object-contain grayscale opacity-50 transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100"
           />
-          <p className="max-w-[98px] truncate text-center text-xs font-medium text-muted-foreground transition-colors duration-500 group-hover:text-foreground">
+          <p className="whitespace-nowrap text-center text-xs font-medium text-muted-foreground transition-colors duration-500 group-hover:text-foreground sm:text-sm">
             {item.name}
           </p>
         </div>
