@@ -13,6 +13,7 @@ export function Hero() {
         alt=""
         aria-hidden="true"
         decoding="async"
+        fetchPriority="high"
         className="absolute inset-0 z-0 h-full w-full scale-105 object-cover"
       />
 
@@ -32,21 +33,21 @@ export function Hero() {
       <AuroraBackground className="z-[4]" intensity="subtle" />
 
       <div className="relative z-10 w-full max-w-5xl px-4 text-center sm:px-6">
-        <BlurReveal>
+        <BlurReveal animateOnMount duration={0.35} blur={6}>
           <h1 className="mt-4 text-balance text-[2rem] font-extrabold leading-[1.05] tracking-tight text-white drop-shadow-[0_2px_32px_rgba(0,0,0,0.8)] sm:text-6xl md:text-7xl lg:text-8xl">
             Seu podcast merece mais do que uma{" "}
             <span className="text-gradient">gravação</span>.
           </h1>
         </BlurReveal>
 
-        <Reveal delay={0.15}>
+        <Reveal animateOnMount delay={0.06} duration={0.3} y={12}>
           <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-white/90 drop-shadow-[0_1px_6px_rgba(0,0,0,0.9)] sm:mt-8 sm:text-lg md:text-xl">
             Transformamos conversas em conteúdo profissional que fortalece sua autoridade, gera
             confiança e posiciona sua marca.
           </p>
         </Reveal>
 
-        <ScaleReveal delay={0.25}>
+        <ScaleReveal animateOnMount delay={0.12} duration={0.3}>
           <div className="mx-auto mt-8 w-fit max-w-full rounded-2xl border border-white/10 bg-black/40 px-5 py-5 backdrop-blur-sm sm:mt-10 sm:px-8 sm:py-6">
             <div className="flex items-center justify-center gap-2">
               <span className="flex text-purple-neon">
@@ -60,7 +61,7 @@ export function Hero() {
               {HERO_STATS.map((stat) => (
                 <div key={stat.label} className="text-center">
                   <p className="font-display text-2xl font-extrabold text-gradient sm:text-3xl">
-                    <Counter to={stat.value} suffix={stat.suffix} />
+                    <Counter to={stat.value} suffix={stat.suffix} duration={0.9} />
                   </p>
                   <p className="mt-1 text-xs text-white/70 sm:text-sm">{stat.label}</p>
                 </div>
@@ -69,7 +70,7 @@ export function Hero() {
           </div>
         </ScaleReveal>
 
-        <Reveal delay={0.35}>
+        <Reveal animateOnMount delay={0.18} duration={0.3} y={12}>
           <div className="mt-10 flex w-full flex-col gap-3 sm:mt-12 sm:flex-row sm:items-center sm:justify-center sm:gap-4">
             <a
               href={WHATSAPP_LINK}

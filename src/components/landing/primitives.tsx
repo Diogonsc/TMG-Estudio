@@ -6,21 +6,27 @@ export function Reveal({
   delay = 0,
   className,
   y = 20,
+  animateOnMount = false,
+  duration = 0.6,
 }: {
   children: ReactNode;
   delay?: number;
   className?: string;
   y?: number;
+  animateOnMount?: boolean;
+  duration?: number;
 }) {
   const prefersReducedMotion = useReducedMotion();
+  const target = prefersReducedMotion ? undefined : { opacity: 1, y: 0 };
 
   return (
     <motion.div
       className={className}
       initial={prefersReducedMotion ? false : { opacity: 0, y }}
-      whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
+      {...(animateOnMount
+        ? { animate: target }
+        : { whileInView: target, viewport: { once: true, margin: "-40px" } })}
+      transition={{ duration, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>
@@ -31,24 +37,32 @@ export function BlurReveal({
   children,
   delay = 0,
   className,
+  animateOnMount = false,
+  duration = 0.8,
+  blur = 12,
 }: {
   children: ReactNode;
   delay?: number;
   className?: string;
+  animateOnMount?: boolean;
+  duration?: number;
+  blur?: number;
 }) {
   const prefersReducedMotion = useReducedMotion();
+  const target = prefersReducedMotion
+    ? undefined
+    : { opacity: 1, y: 0, filter: "blur(0px)" };
 
   return (
     <motion.div
       className={className}
       initial={
-        prefersReducedMotion ? false : { opacity: 0, y: 24, filter: "blur(12px)" }
+        prefersReducedMotion ? false : { opacity: 0, y: 16, filter: `blur(${blur}px)` }
       }
-      whileInView={
-        prefersReducedMotion ? undefined : { opacity: 1, y: 0, filter: "blur(0px)" }
-      }
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] }}
+      {...(animateOnMount
+        ? { animate: target }
+        : { whileInView: target, viewport: { once: true, margin: "-50px" } })}
+      transition={{ duration, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>
@@ -59,20 +73,26 @@ export function ScaleReveal({
   children,
   delay = 0,
   className,
+  animateOnMount = false,
+  duration = 0.7,
 }: {
   children: ReactNode;
   delay?: number;
   className?: string;
+  animateOnMount?: boolean;
+  duration?: number;
 }) {
   const prefersReducedMotion = useReducedMotion();
+  const target = prefersReducedMotion ? undefined : { opacity: 1, scale: 1 };
 
   return (
     <motion.div
       className={className}
-      initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.92 }}
-      whileInView={prefersReducedMotion ? undefined : { opacity: 1, scale: 1 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
+      initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.96 }}
+      {...(animateOnMount
+        ? { animate: target }
+        : { whileInView: target, viewport: { once: true, margin: "-50px" } })}
+      transition={{ duration, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>
@@ -116,11 +136,13 @@ export function Counter({
   prefix = "",
   suffix = "",
   decimals = 0,
+  duration = 1.8,
 }: {
   to: number;
   prefix?: string;
   suffix?: string;
   decimals?: number;
+  duration?: number;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
@@ -134,12 +156,12 @@ export function Counter({
       return;
     }
     const controls = animate(0, to, {
-      duration: 1.8,
+      duration,
       ease: [0.22, 1, 0.36, 1],
       onUpdate: (v) => setValue(v),
     });
     return () => controls.stop();
-  }, [inView, prefersReducedMotion, to]);
+  }, [duration, inView, prefersReducedMotion, to]);
 
   return (
     <span ref={ref}>
