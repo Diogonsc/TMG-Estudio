@@ -1,5 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
 import LandingPage from "@/components/landing/LandingPage";
+import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -10,7 +10,7 @@ export const Route = createFileRoute("/")({
         content:
           "Transformamos conversas em conteúdo profissional. Gravação de podcast, produção audiovisual e direção de conteúdo em Nova Iguaçu - RJ. Agende sua gravação.",
       },
-      { property: "og:title", content: "TMG Estúdio — Estúdio de Podcast Premium" },
+      { property: "og:title", content: "TMG Estúdio — Estúdio de Podcast" },
       {
         property: "og:description",
         content:

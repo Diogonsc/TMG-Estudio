@@ -84,7 +84,7 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div className="border-t border-white/10 py-6 text-center text-xs flex gap-2 items-center justify-center">
+      <div className="border-t border-white/10 py-6 text-center text-xs flex flex-col sm:flex-row gap-2 items-center justify-center">
         © {new Date().getFullYear()} TMG Estúdio. Todos os direitos reservados.
         |{" "}
         <span className="text-purple-neon">
