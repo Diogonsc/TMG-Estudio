@@ -1,4 +1,4 @@
-import { Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { FaWhatsapp, FaThreads, FaInstagram } from "react-icons/fa6";
 import {
   EMAIL,
@@ -11,9 +11,9 @@ import {
   THREADS_LINK,
   WHATSAPP_LINK,
 } from "@/lib/site";
+import { DeveloperCredits } from "../components/DeveloperCredits";
 import { Logo } from "../components/Logo";
 import { StarRating } from "../components/StarRating";
-import { Button } from "@/components/ui/button";
 
 export function Footer() {
   return (
@@ -115,17 +115,7 @@ export function Footer() {
       <div className="border-t border-white/10 py-6 text-center text-sm flex flex-col sm:flex-row gap-3 items-center justify-center sm:text-base">
         © {new Date().getFullYear()} TMG Estúdio. Todos os direitos reservados.
         |{" "}
-        <span className="text-purple-neon">
-          <a
-            href="https://wa.me/5521973819373"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex min-h-11 items-center text-purple-neon hover:underline"
-          >
-            Desenvolvido por{" "}
-            Diogo Nascimento
-          </a>{" "}
-        </span>
+        <DeveloperCredits />
       </div>
     </footer>
   );
