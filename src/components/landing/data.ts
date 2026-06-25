@@ -21,6 +21,8 @@ import {
   gallery05,
   gallery06,
   gallery07,
+  gallery08,
+  gallery09,
   teamHost,
   teamOwner,
   cliente01,
@@ -77,6 +79,8 @@ export const GALLERY_IMAGES = [
   { src: gallery05, alt: "Gravação em andamento no estúdio" },
   { src: gallery06, alt: "Estrutura e iluminação do estúdio" },
   { src: gallery07, alt: "Produção de conteúdo no TMG Estúdio" },
+  { src: gallery08, alt: "Produção de conteúdo no TMG Estúdio" },
+  { src: gallery09, alt: "Produção de conteúdo no TMG Estúdio" },
 ] as const;
 
 export const STUDIO_VIDEOS = [
@@ -194,6 +198,6 @@ export const CLIENTES_IMAGES = [
   {
     src: cliente04,
     alt: "Cliente 04",
-    name: "Alini Cast"
+    name: "Karoline Absinto"
   }
 ]

@@ -1,18 +1,19 @@
 import { ArrowRight, Star } from "lucide-react";
 
 import { WHATSAPP_LINK } from "@/lib/site";
-import { heroStudio } from "../assets";
 import { Reveal } from "../primitives";
 
 export function Hero() {
   return (
     <section className="relative flex min-h-[100dvh] w-full items-center justify-center overflow-x-clip overflow-y-hidden pt-24 pb-12 sm:min-h-screen sm:pt-28 sm:pb-16">
-      <img
-        src={heroStudio}
-        alt="Estúdio de podcast profissional TMG em Nova Iguaçu"
-        width={1536}
-        height={1024}
-        className="absolute inset-0 h-full w-full object-cover opacity-70"
+      <video
+        src="/videos/video-tmg.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+        aria-hidden
+        className="absolute inset-0 h-full w-full object-cover opacity-90"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/85 to-background" />
       <div

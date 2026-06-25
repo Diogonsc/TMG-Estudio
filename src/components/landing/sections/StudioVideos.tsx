@@ -22,26 +22,28 @@ function VideoCard({
         onClick={() => onOpen(index)}
         className="group relative block w-full overflow-hidden rounded-2xl glass transition-all hover:-translate-y-2 hover:glow-purple"
       >
-        <video
-          src={video.src}
-          poster={video.poster}
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="aspect-[4/3] w-full object-cover transition-[filter] duration-500 group-hover:brightness-[0.65]"
-        />
-        <div className="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/25" />
-        <span className="pointer-events-none absolute inset-0 grid place-items-center opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-          <motion.span
-            className="grid h-14 w-14 place-items-center rounded-full border border-purple-500/30 bg-black/50 text-white backdrop-blur-sm shadow-[0_0_30px_rgba(168,85,247,0.25)]"
-            initial={{ scale: 0.85 }}
-            whileInView={{ scale: 1 }}
-            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <Play className="h-6 w-6 fill-white" />
-          </motion.span>
-        </span>
+        <div className="relative aspect-[9/16] w-full bg-black/30">
+          <video
+            src={video.src}
+            poster={video.poster}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="h-full w-full object-contain transition-[filter] duration-500 group-hover:brightness-[0.65]"
+          />
+          <div className="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/25" />
+          <span className="pointer-events-none absolute inset-0 grid place-items-center opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+            <motion.span
+              className="grid h-14 w-14 place-items-center rounded-full border border-purple-500/30 bg-black/50 text-white backdrop-blur-sm shadow-[0_0_30px_rgba(168,85,247,0.25)]"
+              initial={{ scale: 0.85 }}
+              whileInView={{ scale: 1 }}
+              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <Play className="h-6 w-6 fill-white" />
+            </motion.span>
+          </span>
+        </div>
       </button>
     </PremiumReveal>
   );

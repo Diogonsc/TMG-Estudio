@@ -1,10 +1,10 @@
 import { Film, Lightbulb, Mic, Radio, Scissors, Video } from "lucide-react";
 
 import service01 from "@/assets/service-01.jpeg";
-import service02 from "@/assets/service-02.jpeg";
+import service02 from "@/assets/service-02.png";
 import service03 from "@/assets/service-03.png";
 import service04 from "@/assets/service-04.jpeg";
-import service05 from "@/assets/service-05.jpeg";
+import service05 from "@/assets/service-05.png";
 import service06 from "@/assets/service-06.png";
 
 import { SectionHeader } from "../components/SectionHeader";

@@ -8,3 +8,7 @@ export const THREADS_LINK = "https://threads.net/@tmgestudio";
 export const EMAIL = "tmgestudio21@gmail.com";
 export const PHONE_DISPLAY = "(21) 97580-7070";
 export const LOCATION = "Nova Iguaçu - RJ";
+export const ADDRESS_STREET = "Rua Cosmorama, 984";
+export const ADDRESS_AREA = "Cosmorama — Mesquita, RJ";
+export const MAPS_LINK =
+  "https://www.google.com/maps/search/?api=1&query=Rua+Cosmorama,+984,+Cosmorama,+Mesquita,+RJ";

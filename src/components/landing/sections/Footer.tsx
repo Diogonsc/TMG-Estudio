@@ -2,8 +2,11 @@ import { Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { FaWhatsapp, FaThreads, FaInstagram } from "react-icons/fa6";
 import {
   EMAIL,
+  ADDRESS_AREA,
+  ADDRESS_STREET,
   INSTAGRAM_LINK,
   LOCATION,
+  MAPS_LINK,
   PHONE_DISPLAY,
   THREADS_LINK,
   WHATSAPP_LINK,
@@ -26,6 +29,18 @@ export function Footer() {
             Avaliação máxima no Google
           </div>
           <div className="mt-5"></div>
+          <a
+            href={MAPS_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 flex items-start gap-2.5 rounded-xl glass px-3 py-2.5 text-sm transition-colors hover:text-foreground"
+          >
+            <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-purple-neon" />
+            <span className="leading-snug text-muted-foreground">
+              <span className="block font-medium text-foreground">{ADDRESS_STREET}</span>
+              {ADDRESS_AREA}
+            </span>
+          </a>
         </div>
         <div>
           <h3 className="font-display font-bold">Contato</h3>
@@ -66,8 +81,15 @@ export function Footer() {
             <li className="flex items-center gap-2">
               <Mail className="h-4 w-4 text-purple-neon" /> {EMAIL}
             </li>
-            <li className="flex items-center gap-2">
-              <MapPin className="h-4 w-4 text-purple-neon" /> {LOCATION}
+            <li>
+              <a
+                href={MAPS_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-foreground"
+              >
+                <MapPin className="h-4 w-4 shrink-0 text-purple-neon" /> {LOCATION}
+              </a>
             </li>
           </ul>
         </div>
@@ -75,7 +97,7 @@ export function Footer() {
           <h3 className="font-display font-bold">Localização</h3>
           <div className="mt-4 overflow-hidden rounded-2xl glass">
             <iframe
-              title="Mapa TMG Estúdio - Nova Iguaçu"
+              title="Mapa TMG Estúdio - Mesquita"
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14713.169690907842!2d-43.414033!3d-22.791626!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9967f41a001f39%3A0x5f829a3ae679c4cb!2sEst%C3%BAdio%20de%20Podcast%20TMG!5e0!3m2!1spt-PT!2sbr!4v1782329208019!5m2!1spt-PT!2sbr"
               className="h-44 w-full border-0"
               loading="lazy"

@@ -7,6 +7,8 @@ import gallery04 from "@/assets/gallery-04.png";
 import gallery05 from "@/assets/gallery-05.png";
 import gallery06 from "@/assets/gallery-06.png";
 import gallery07 from "@/assets/gallery-07.png";
+import gallery08 from "@/assets/gallery-08.jpg";
+import gallery09 from "@/assets/gallery-09.jpg";
 import teamOwner from "@/assets/responsavel-tec.jpeg";
 import teamHost from "@/assets/host.png";
 import logoTMG from "@/assets/logo-tmg.png";
@@ -25,6 +27,8 @@ export {
   gallery05,
   gallery06,
   gallery07,
+  gallery08,
+  gallery09,
   teamOwner,
   teamHost,
   logoTMG,
