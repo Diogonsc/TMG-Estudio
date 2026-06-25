@@ -21,7 +21,7 @@ export function Hero() {
       />
       <div className="relative z-10 w-full max-w-4xl px-4 text-center sm:px-6">
         <Reveal>
-          <div className="mx-auto mb-5 flex max-w-full flex-col items-center gap-1.5 rounded-full glass px-3 py-2 text-[11px] leading-snug sm:mb-6 sm:flex-row sm:gap-2 sm:px-4 sm:py-1.5 sm:text-xs">
+          <div className="mx-auto mb-5 flex w-fit max-w-full flex-col items-center gap-1.5 rounded-full glass px-3 py-1.5 text-[11px] leading-snug sm:mb-6 sm:flex-row sm:gap-2 sm:px-3.5 sm:py-1.5 sm:text-xs">
             <span className="flex shrink-0 text-purple-neon">
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star key={i} className="h-3 w-3 fill-current sm:h-3.5 sm:w-3.5" />
