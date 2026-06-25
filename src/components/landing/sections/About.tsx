@@ -1,6 +1,6 @@
 import { Award, Building2, Compass, Layers, TriangleAlert } from "lucide-react";
 
-import tmgSubscribe from "@/assets/tmg-subscribe.png";
+import tmgSubscribe from "@/assets/tmg-subscribe.webp";
 import { FloatingOrb, Reveal } from "../primitives";
 
 export function About() {
@@ -30,6 +30,7 @@ export function About() {
               width={1200}
               height={1000}
               loading="lazy"
+              decoding="async"
               className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent" />

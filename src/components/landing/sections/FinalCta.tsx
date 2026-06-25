@@ -2,6 +2,7 @@ import { FaWhatsapp } from "react-icons/fa6";
 
 import { WHATSAPP_LINK } from "@/lib/site";
 import { AuroraBackground } from "../components/AuroraBackground";
+import { heroPoster } from "../assets";
 import { BlurReveal, ScaleReveal } from "../primitives";
 
 export function FinalCta() {
@@ -9,10 +10,12 @@ export function FinalCta() {
     <section className="relative w-full overflow-x-clip py-24 sm:py-36 md:py-44">
       <video
         src="/videos/video-tmg.mp4"
+        poster={heroPoster}
         autoPlay
         muted
         loop
         playsInline
+        preload="metadata"
         aria-hidden
         className="absolute inset-0 h-full w-full object-cover opacity-40"
       />

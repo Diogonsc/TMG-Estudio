@@ -9,6 +9,7 @@ import {
 } from "@tanstack/react-router";
 import { type ReactNode } from "react";
 
+import { OG_IMAGE_URL, SITE_URL } from "@/lib/site";
 import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
@@ -86,24 +87,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Conteúdo profissional que fortalece sua autoridade e posiciona sua marca. Nova Iguaçu - RJ.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: SITE_URL },
+      { property: "og:image", content: OG_IMAGE_URL },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: OG_IMAGE_URL },
       { name: "theme-color", content: "#0c0b0e" },
     ],
     links: [
+      { rel: "canonical", href: SITE_URL },
       { rel: "icon", href: "/favicon.ico", sizes: "48x48" },
       { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
       { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" },
       { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
       { rel: "manifest", href: "/site.webmanifest" },
+      { rel: "preload", as: "image", href: "/videos/video-tmg-poster.webp" },
       {
         rel: "stylesheet",
         href: appCss,
-      },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap",
       },
     ],
   }),

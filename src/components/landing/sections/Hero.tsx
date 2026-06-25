@@ -10,13 +10,22 @@ export function Hero() {
     <section className="relative flex min-h-[100dvh] w-full items-center justify-center overflow-x-clip overflow-y-hidden pt-24 pb-16 sm:min-h-screen sm:pt-28 sm:pb-20">
       <video
         src="/videos/video-tmg.mp4"
+        poster="/videos/video-tmg-poster.webp"
         autoPlay
         muted
         loop
         playsInline
-        aria-hidden
+        preload="none"
+        aria-hidden="true"
         className="absolute inset-0 z-0 h-full w-full scale-105 object-cover"
-      />
+      >
+        <img
+          src="/videos/video-tmg-poster.webp"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 z-0 h-full w-full scale-105 object-cover"
+        />
+      </video>
 
       {/* Overlay preto para contraste e legibilidade */}
       <div className="absolute inset-0 z-[1] bg-black/55" />
@@ -42,7 +51,7 @@ export function Hero() {
         </BlurReveal>
 
         <Reveal delay={0.15}>
-          <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-white/80 sm:mt-8 sm:text-lg md:text-xl">
+          <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-white/90 drop-shadow-[0_1px_6px_rgba(0,0,0,0.9)] sm:mt-8 sm:text-lg md:text-xl">
             Transformamos conversas em conteúdo profissional que fortalece sua autoridade, gera
             confiança e posiciona sua marca.
           </p>
@@ -64,7 +73,7 @@ export function Hero() {
                   <p className="font-display text-2xl font-extrabold text-gradient sm:text-3xl">
                     <Counter to={stat.value} suffix={stat.suffix} />
                   </p>
-                  <p className="mt-1 text-xs text-white/60 sm:text-sm">{stat.label}</p>
+                  <p className="mt-1 text-xs text-white/70 sm:text-sm">{stat.label}</p>
                 </div>
               ))}
             </div>

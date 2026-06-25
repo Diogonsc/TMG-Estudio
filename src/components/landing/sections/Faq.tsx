@@ -23,7 +23,7 @@ export function Faq() {
               <AccordionTrigger className="min-h-11 py-4 text-left font-display text-base font-semibold text-foreground hover:no-underline sm:min-h-12 sm:py-5 sm:text-lg">
                 {f.q}
               </AccordionTrigger>
-              <AccordionContent className="border-t border-white/8 pb-5 pt-1 text-sm leading-relaxed text-white/70 sm:text-base">
+              <AccordionContent className="border-t border-white/8 pb-5 pt-1 text-sm leading-relaxed text-white/85 sm:text-base">
                 {f.a}
               </AccordionContent>
             </AccordionItem>

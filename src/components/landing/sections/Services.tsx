@@ -1,11 +1,11 @@
 import { Film, Lightbulb, Mic, Radio, Scissors, Video } from "lucide-react";
 
-import service01 from "@/assets/service-01.jpeg";
-import service02 from "@/assets/service-02.png";
-import service03 from "@/assets/service-03.png";
-import service04 from "@/assets/service-04.jpeg";
-import service05 from "@/assets/service-05.png";
-import service06 from "@/assets/service-06.png";
+import service01 from "@/assets/service-01.webp";
+import service02 from "@/assets/service-02.webp";
+import service03 from "@/assets/service-03.webp";
+import service04 from "@/assets/service-04.webp";
+import service05 from "@/assets/service-05.webp";
+import service06 from "@/assets/service-06.webp";
 
 import { SectionHeader } from "../components/SectionHeader";
 import { SpotlightCard } from "../components/SpotlightCard";
@@ -62,7 +62,10 @@ export function Services() {
                 <img
                   src={it.img}
                   alt={it.title}
+                  width={566}
+                  height={417}
                   loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-cover opacity-75 transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />

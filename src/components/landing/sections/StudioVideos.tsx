@@ -20,22 +20,30 @@ function VideoCard({
       <button
         type="button"
         onClick={() => onOpen(index)}
+        aria-label={`Assistir: ${video.title}`}
         className="group relative block w-full overflow-hidden rounded-2xl glass transition-all hover:-translate-y-2 hover:glow-purple"
       >
         <div className="relative aspect-[9/16] w-full bg-black/30">
           <video
             src={video.src}
             poster={video.poster}
-            autoPlay
             muted
             loop
             playsInline
+            preload="none"
+            onMouseEnter={(e) => (e.currentTarget as HTMLVideoElement).play()}
+            onMouseLeave={(e) => {
+              const v = e.currentTarget as HTMLVideoElement;
+              v.pause();
+              v.currentTime = 0;
+            }}
+            onTouchStart={(e) => (e.currentTarget as HTMLVideoElement).play()}
             className="h-full w-full object-contain transition-all duration-500 group-hover:scale-[1.02] group-hover:brightness-75"
           />
           <div className="pointer-events-none absolute inset-0 bg-black/10 transition-colors duration-500 group-hover:bg-black/30" />
           <span className="pointer-events-none absolute inset-0 grid place-items-center">
             <span className="grid h-14 w-14 place-items-center rounded-full border border-white/20 bg-black/40 text-white opacity-80 backdrop-blur-sm transition-all duration-500 group-hover:scale-110 group-hover:border-purple-neon/40 group-hover:bg-black/60 group-hover:opacity-100 group-hover:shadow-[var(--glow-purple)]">
-              <Play className="h-6 w-6 fill-white" />
+              <Play className="h-6 w-6 fill-white" aria-hidden />
             </span>
           </span>
         </div>
@@ -77,10 +85,15 @@ function VideoModal({
 
   useEffect(() => {
     videoRef.current?.play().catch(() => undefined);
+    document.querySelector<HTMLElement>('[role="dialog"]')?.focus();
   }, [activeIndex]);
 
   return (
     <motion.div
+      role="dialog"
+      aria-modal="true"
+      aria-label="Reprodutor de vídeo"
+      tabIndex={-1}
       className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-4 sm:p-8"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -94,7 +107,7 @@ function VideoModal({
         className="absolute right-4 top-4 z-10 grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/5 text-white backdrop-blur-sm transition-colors hover:bg-white/10"
         aria-label="Fechar"
       >
-        <X className="h-5 w-5" />
+        <X className="h-5 w-5" aria-hidden />
       </button>
 
       {hasPrev && (
@@ -107,7 +120,7 @@ function VideoModal({
           className="absolute left-2 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-white/10 bg-white/5 text-white backdrop-blur-sm transition-colors hover:bg-white/10 sm:left-6 sm:h-12 sm:w-12"
           aria-label="Vídeo anterior"
         >
-          <ChevronLeft className="h-6 w-6" />
+          <ChevronLeft className="h-6 w-6" aria-hidden />
         </button>
       )}
 
@@ -121,11 +134,12 @@ function VideoModal({
           className="absolute right-2 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-white/10 bg-white/5 text-white backdrop-blur-sm transition-colors hover:bg-white/10 sm:right-6 sm:h-12 sm:w-12"
           aria-label="Próximo vídeo"
         >
-          <ChevronRight className="h-6 w-6" />
+          <ChevronRight className="h-6 w-6" aria-hidden />
         </button>
       )}
 
       <motion.div
+        tabIndex={-1}
         className="w-full max-w-5xl"
         initial={{ opacity: 0, scale: 0.94, filter: "blur(8px)" }}
         animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
@@ -140,6 +154,7 @@ function VideoModal({
           poster={video.poster}
           controls
           playsInline
+          preload="metadata"
           className="max-h-[80vh] w-full rounded-2xl bg-black object-contain shadow-[0_0_60px_rgba(168,85,247,0.2)]"
         />
         <p className="mt-4 text-center text-sm font-medium text-white/80 sm:text-base">{video.title}</p>

@@ -33,7 +33,10 @@ export function Team() {
                   <img
                     src={member.image}
                     alt={member.role}
+                    width={400}
+                    height={400}
                     loading="lazy"
+                    decoding="async"
                     className="relative aspect-[3/4] w-full rounded-2xl object-cover shadow-[0_24px_48px_rgba(0,0,0,0.5)] transition-transform duration-700 group-hover:scale-[1.02]"
                   />
                 </div>

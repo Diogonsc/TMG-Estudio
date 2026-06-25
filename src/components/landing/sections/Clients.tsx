@@ -25,7 +25,10 @@ function Track({ items }: { items: LogoItem[] }) {
             <img
               src={item.src}
               alt={item.alt}
+              width={400}
+              height={400}
               loading="lazy"
+              decoding="async"
               className="max-h-full max-w-full object-contain grayscale opacity-60 transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100"
             />
           </div>

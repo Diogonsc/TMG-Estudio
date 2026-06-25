@@ -1,26 +1,21 @@
-import heroStudio from "@/assets/hero-tmg.png";
-import studioRoom from "@/assets/studio-room.jpg";
-import galleryMic from "@/assets/gallery-mic.jpg";
-import gallery01 from "@/assets/gallery-01.jpeg";
-import gallery02 from "@/assets/gallery-02.jpeg";
-import gallery04 from "@/assets/gallery-04.png";
-import gallery05 from "@/assets/gallery-05.png";
-import gallery06 from "@/assets/gallery-06.png";
-import gallery07 from "@/assets/gallery-07.png";
-import gallery08 from "@/assets/gallery-08.jpg";
-import gallery09 from "@/assets/gallery-09.jpg";
-import teamOwner from "@/assets/responsavel-tec.jpeg";
-import teamHost from "@/assets/host.png";
-import logoTMG from "@/assets/logo-tmg.png";
-import cliente01 from "@/assets/clientes-01.jpg";
-import cliente02 from "@/assets/clientes-02.jpg";
-import cliente03 from "@/assets/clientes-03.jpg";
-import cliente04 from "@/assets/clientes-04.jpg";   
+import gallery01 from "@/assets/gallery-01.webp";
+import gallery02 from "@/assets/gallery-02.webp";
+import gallery04 from "@/assets/gallery-04.webp";
+import gallery05 from "@/assets/gallery-05.webp";
+import gallery06 from "@/assets/gallery-06.webp";
+import gallery07 from "@/assets/gallery-07.webp";
+import gallery08 from "@/assets/gallery-08.webp";
+import gallery09 from "@/assets/gallery-09.webp";
+import heroPoster from "@/assets/hero-tmg.webp";
+import teamOwner from "@/assets/responsavel-tec.webp";
+import teamHost from "@/assets/host.webp";
+import logoTMG from "@/assets/logo-tmg.webp";
+import cliente01 from "@/assets/clientes-01.webp";
+import cliente02 from "@/assets/clientes-02.webp";
+import cliente03 from "@/assets/clientes-03.webp";
+import cliente04 from "@/assets/clientes-04.webp";
 
 export {
-  heroStudio,
-  studioRoom,
-  galleryMic,
   gallery01,
   gallery02,
   gallery04,
@@ -29,6 +24,7 @@ export {
   gallery07,
   gallery08,
   gallery09,
+  heroPoster,
   teamOwner,
   teamHost,
   logoTMG,

@@ -99,45 +99,45 @@ export const PROCESS_STEPS: { icon: LucideIcon; title: string; desc: string }[] 
 ];
 
 export const GALLERY_IMAGES = [
-  { src: gallery01, alt: "Estúdio TMG — ambiente de gravação" },
-  { src: gallery02, alt: "Equipamentos profissionais do estúdio" },
-  { src: gallery04, alt: "Bastidores de produção audiovisual" },
-  { src: gallery05, alt: "Gravação em andamento no estúdio" },
-  { src: gallery06, alt: "Estrutura e iluminação do estúdio" },
-  { src: gallery07, alt: "Produção de conteúdo no TMG Estúdio" },
-  { src: gallery08, alt: "Produção de conteúdo no TMG Estúdio" },
-  { src: gallery09, alt: "Produção de conteúdo no TMG Estúdio" },
+  { src: gallery01, alt: "Estúdio TMG — ambiente de gravação", width: 854, height: 1280 },
+  { src: gallery02, alt: "Equipamentos profissionais do estúdio", width: 864, height: 1280 },
+  { src: gallery04, alt: "Bastidores de produção audiovisual", width: 1080, height: 1350 },
+  { src: gallery05, alt: "Gravação em andamento no estúdio", width: 1080, height: 1350 },
+  { src: gallery06, alt: "Estrutura e iluminação do estúdio", width: 1080, height: 1350 },
+  { src: gallery07, alt: "Produção de conteúdo no TMG Estúdio", width: 1080, height: 1350 },
+  { src: gallery08, alt: "Produção de conteúdo no TMG Estúdio", width: 1080, height: 1350 },
+  { src: gallery09, alt: "Produção de conteúdo no TMG Estúdio", width: 1080, height: 1350 },
 ] as const;
 
 export const STUDIO_VIDEOS = [
   {
     src: "/videos/studio-01.mp4",
-    poster: gallery01,
+    poster: "/videos/studio-01-poster.webp",
     title: "Tour pelo estúdio",
   },
   {
     src: "/videos/studio-02.mp4",
-    poster: gallery02,
+    poster: "/videos/studio-02-poster.webp",
     title: "Equipamentos em ação",
   },
   {
     src: "/videos/studio-03.mp4",
-    poster: gallery07,
+    poster: "/videos/studio-03-poster.webp",
     title: "Produção de podcast",
   },
   {
     src: "/videos/studio-04.mp4",
-    poster: gallery04,
+    poster: "/videos/studio-04-poster.webp",
     title: "Bastidores da gravação",
   },
   {
     src: "/videos/studio-05.mp4",
-    poster: gallery05,
+    poster: "/videos/studio-05-poster.webp",
     title: "Gravação em andamento",
   },
   {
     src: "/videos/studio-06.mp4",
-    poster: gallery06,
+    poster: "/videos/studio-06-poster.webp",
     title: "Estrutura do TMG Estúdio",
   },
 ] as const;

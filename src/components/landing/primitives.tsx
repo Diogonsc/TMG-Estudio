@@ -1,4 +1,4 @@
-import { motion, useInView, useMotionValue, useSpring, animate } from "framer-motion";
+import { motion, useInView, useMotionValue, useReducedMotion, useSpring, animate } from "framer-motion";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
 export function Reveal({
@@ -12,11 +12,13 @@ export function Reveal({
   className?: string;
   y?: number;
 }) {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={prefersReducedMotion ? false : { opacity: 0, y }}
+      whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
     >
@@ -34,11 +36,17 @@ export function BlurReveal({
   delay?: number;
   className?: string;
 }) {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y: 24, filter: "blur(12px)" }}
-      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      initial={
+        prefersReducedMotion ? false : { opacity: 0, y: 24, filter: "blur(12px)" }
+      }
+      whileInView={
+        prefersReducedMotion ? undefined : { opacity: 1, y: 0, filter: "blur(0px)" }
+      }
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] }}
     >
@@ -56,11 +64,13 @@ export function ScaleReveal({
   delay?: number;
   className?: string;
 }) {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, scale: 0.92 }}
-      whileInView={{ opacity: 1, scale: 1 }}
+      initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.92 }}
+      whileInView={prefersReducedMotion ? undefined : { opacity: 1, scale: 1 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
     >
@@ -78,11 +88,21 @@ export function PremiumReveal({
   delay?: number;
   className?: string;
 }) {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y: 28, filter: "blur(10px)", scale: 0.95 }}
-      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)", scale: 1 }}
+      initial={
+        prefersReducedMotion
+          ? false
+          : { opacity: 0, y: 28, filter: "blur(10px)", scale: 0.95 }
+      }
+      whileInView={
+        prefersReducedMotion
+          ? undefined
+          : { opacity: 1, y: 0, filter: "blur(0px)", scale: 1 }
+      }
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.75, delay, ease: [0.22, 1, 0.36, 1] }}
     >
@@ -104,17 +124,22 @@ export function Counter({
 }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
-  const [value, setValue] = useState(0);
+  const prefersReducedMotion = useReducedMotion();
+  const [value, setValue] = useState(prefersReducedMotion ? to : 0);
 
   useEffect(() => {
     if (!inView) return;
+    if (prefersReducedMotion) {
+      setValue(to);
+      return;
+    }
     const controls = animate(0, to, {
       duration: 1.8,
       ease: [0.22, 1, 0.36, 1],
       onUpdate: (v) => setValue(v),
     });
     return () => controls.stop();
-  }, [inView, to]);
+  }, [inView, prefersReducedMotion, to]);
 
   return (
     <span ref={ref}>
@@ -126,19 +151,23 @@ export function Counter({
 }
 
 export function MouseSpotlight() {
+  const prefersReducedMotion = useReducedMotion();
   const x = useMotionValue(-500);
   const y = useMotionValue(-500);
   const sx = useSpring(x, { stiffness: 120, damping: 25 });
   const sy = useSpring(y, { stiffness: 120, damping: 25 });
 
   useEffect(() => {
+    if (prefersReducedMotion) return;
     const handler = (e: MouseEvent) => {
       x.set(e.clientX);
       y.set(e.clientY);
     };
     window.addEventListener("mousemove", handler);
     return () => window.removeEventListener("mousemove", handler);
-  }, [x, y]);
+  }, [prefersReducedMotion, x, y]);
+
+  if (prefersReducedMotion) return null;
 
   return (
     <motion.div
@@ -163,6 +192,8 @@ export function FloatingOrb({
   size?: number;
   delay?: number;
 }) {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <motion.div
       aria-hidden
@@ -172,8 +203,12 @@ export function FloatingOrb({
         height: size,
         background: "radial-gradient(circle, oklch(0.5 0.2 290 / 0.4), transparent 70%)",
       }}
-      animate={{ y: [0, -30, 0], x: [0, 20, 0] }}
-      transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay }}
+      animate={prefersReducedMotion ? undefined : { y: [0, -30, 0], x: [0, 20, 0] }}
+      transition={
+        prefersReducedMotion
+          ? undefined
+          : { duration: 12, repeat: Infinity, ease: "easeInOut", delay }
+      }
     />
   );
 }

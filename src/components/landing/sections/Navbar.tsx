@@ -37,12 +37,16 @@ export function Navbar() {
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Fechar menu" : "Abrir menu"}
           aria-expanded={open}
+          aria-controls="mobile-nav-menu"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </nav>
       {open && (
-        <div className="glass absolute top-[4.25rem] left-3 right-3 flex flex-col gap-3 rounded-2xl p-4 sm:left-4 sm:right-4 sm:top-20 sm:p-5 md:hidden">
+        <div
+          id="mobile-nav-menu"
+          className="glass absolute top-[4.25rem] left-3 right-3 flex flex-col gap-3 rounded-2xl p-4 sm:left-4 sm:right-4 sm:top-20 sm:p-5 md:hidden"
+        >
           {NAV_LINKS.map((l) => (
             <a
               key={l.href}

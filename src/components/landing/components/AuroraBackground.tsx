@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 import { cn } from "@/lib/utils";
 
@@ -41,23 +41,29 @@ const intensityOpacity = {
 } as const;
 
 export function AuroraBackground({ className, intensity = "subtle" }: AuroraBackgroundProps) {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <div
       className={cn("pointer-events-none absolute inset-0 overflow-hidden", className)}
-      aria-hidden
+      aria-hidden="true"
     >
       <div className={cn("absolute inset-0", intensityOpacity[intensity])}>
         {blobs.map((blob, i) => (
           <motion.div
             key={i}
             className={cn("absolute rounded-full blur-[100px] sm:blur-[140px]", blob.className)}
-            style={{ background: blob.color }}
-            animate={blob.animate}
-            transition={{
-              duration: blob.duration,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
+            style={{ background: blob.color, willChange: "transform" }}
+            animate={shouldReduceMotion ? {} : blob.animate}
+            transition={
+              shouldReduceMotion
+                ? {}
+                : {
+                    duration: blob.duration,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }
+            }
           />
         ))}
       </div>

@@ -1,3 +1,12 @@
+@import "@fontsource/sora/400.css";
+@import "@fontsource/sora/500.css";
+@import "@fontsource/sora/600.css";
+@import "@fontsource/sora/700.css";
+@import "@fontsource/sora/800.css";
+@import "@fontsource/plus-jakarta-sans/400.css";
+@import "@fontsource/plus-jakarta-sans/500.css";
+@import "@fontsource/plus-jakarta-sans/600.css";
+@import "@fontsource/plus-jakarta-sans/700.css";
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -74,7 +83,7 @@
   --secondary: oklch(0.16 0.02 290);
   --secondary-foreground: oklch(0.98 0 0);
   --muted: oklch(0.16 0.015 290);
-  --muted-foreground: oklch(0.68 0.02 290);
+  --muted-foreground: oklch(0.75 0.02 290);
   --accent: oklch(0.5 0.2 290);
   --accent-foreground: oklch(0.99 0 0);
   --destructive: oklch(0.6 0.24 27);
@@ -194,6 +203,20 @@
   h1, h2, h3, h4, h5 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
