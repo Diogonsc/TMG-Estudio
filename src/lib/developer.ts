@@ -1,7 +1,7 @@
 export const DEVELOPER = {
   name: "Diogo Nascimento",
   role: "Desenvolvedor Frontend",
-  email: "diogonascimentodev@gmail.com",
+  email: "diogos.nascimento@outlook.com",
   whatsappNumber: "5521973819373",
   whatsappDisplay: "(21) 97381-9373",
   instagramLink: "https://instagram.com/diogonsc",
