@@ -8,24 +8,13 @@ import { BlurReveal, Counter, Reveal, ScaleReveal } from "../primitives";
 export function Hero() {
   return (
     <section className="relative flex min-h-[100dvh] w-full items-center justify-center overflow-x-clip overflow-y-hidden pt-24 pb-16 sm:min-h-screen sm:pt-28 sm:pb-20">
-      <video
-        src="/videos/video-tmg.mp4"
-        poster="/videos/video-tmg-poster.webp"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="none"
+      <img
+        src="/videos/video-tmg-poster.webp"
+        alt=""
         aria-hidden="true"
+        decoding="async"
         className="absolute inset-0 z-0 h-full w-full scale-105 object-cover"
-      >
-        <img
-          src="/videos/video-tmg-poster.webp"
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 z-0 h-full w-full scale-105 object-cover"
-        />
-      </video>
+      />
 
       {/* Overlay preto para contraste e legibilidade */}
       <div className="absolute inset-0 z-[1] bg-black/55" />

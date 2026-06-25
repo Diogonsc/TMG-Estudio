@@ -8,15 +8,11 @@ import { BlurReveal, ScaleReveal } from "../primitives";
 export function FinalCta() {
   return (
     <section className="relative w-full overflow-x-clip py-24 sm:py-36 md:py-44">
-      <video
-        src="/videos/video-tmg.mp4"
-        poster={heroPoster}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
+      <img
+        src={heroPoster}
+        alt=""
         aria-hidden
+        decoding="async"
         className="absolute inset-0 h-full w-full object-cover opacity-40"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/92 to-background" />
