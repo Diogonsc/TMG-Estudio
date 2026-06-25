@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 
 import { SectionHeader } from "../components/SectionHeader";
 import { CLIENTES_IMAGES } from "../data";
+import { PremiumReveal } from "../primitives";
 
 interface LogoItem {
   src: string;
@@ -12,25 +13,22 @@ interface LogoItem {
 const row1: LogoItem[] = [...CLIENTES_IMAGES];
 const row2: LogoItem[] = [...CLIENTES_IMAGES].reverse();
 
-interface MarqueeRowProps {
-  items: LogoItem[];
-  reverse?: boolean;
-}
-
 function Track({ items }: { items: LogoItem[] }) {
   return (
     <div className="flex">
       {items.map((item, index) => (
         <div
           key={`${item.name}-${index}`}
-          className="group mx-[35px] flex w-max shrink-0 flex-col items-center gap-3"
+          className="group mx-8 flex w-max shrink-0 flex-col items-center gap-4 px-1 py-3 sm:mx-10"
         >
-          <img
-            src={item.src}
-            alt={item.alt}
-            loading="lazy"
-            className="h-[70px] w-[98px] object-contain grayscale opacity-50 transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100"
-          />
+          <div className="flex h-[88px] w-[122px] origin-center items-center justify-center rounded-2xl border border-white/5 bg-white/[0.03] px-4 transition-all duration-500 group-hover:-translate-y-1 group-hover:scale-105 group-hover:border-purple-neon/20 group-hover:shadow-[var(--glow-purple)] sm:h-[96px] sm:w-[130px]">
+            <img
+              src={item.src}
+              alt={item.alt}
+              loading="lazy"
+              className="max-h-full max-w-full object-contain grayscale opacity-60 transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100"
+            />
+          </div>
           <p className="whitespace-nowrap text-center text-xs font-medium text-muted-foreground transition-colors duration-500 group-hover:text-foreground sm:text-sm">
             {item.name}
           </p>
@@ -40,9 +38,17 @@ function Track({ items }: { items: LogoItem[] }) {
   );
 }
 
-function MarqueeRow({ items, reverse = false }: MarqueeRowProps) {
+function MarqueeRow({
+  items,
+  reverse = false,
+  className,
+}: {
+  items: LogoItem[];
+  reverse?: boolean;
+  className?: string;
+}) {
   return (
-    <div className="relative w-full overflow-hidden">
+    <div className={cn("relative w-full overflow-hidden py-4 sm:py-5", className)}>
       <div
         className={cn(
           "flex w-max",
@@ -60,18 +66,29 @@ function MarqueeRow({ items, reverse = false }: MarqueeRowProps) {
 
 export function Clients() {
   return (
-    <section id="clientes" className="section-shell relative w-full overflow-x-clip py-16 sm:py-24">
-      <SectionHeader
-        kicker="Clientes"
-        title="Marcas que confiam no TMG"
-        subtitle="Podcasts, empresas e criadores que já produziram conteúdo em nosso estúdio."
-        className="px-4 sm:px-6"
+    <section id="clientes" className="section-shell relative w-full overflow-x-clip">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-1/2 -z-10 h-[70%] -translate-y-1/2 blur-3xl"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, oklch(0.66 0.22 303 / 0.1) 0%, transparent 65%)",
+        }}
       />
 
-      <div className="mt-10 space-y-10 sm:mt-14">
-        <MarqueeRow items={row1} />
-        <MarqueeRow items={row2} reverse />
-      </div>
+      <PremiumReveal>
+        <SectionHeader
+          kicker="Clientes"
+          title="Marcas que confiam no TMG"
+          subtitle="Podcasts, empresas e criadores que já produziram conteúdo em nosso estúdio."
+          className="px-4 sm:px-6"
+        />
+      </PremiumReveal>
+
+      <PremiumReveal delay={0.15} className="mt-12 sm:mt-16">
+        <MarqueeRow items={row1} className="pb-0 sm:pb-0" />
+        <MarqueeRow items={row2} reverse className="pt-2 sm:pt-3" />
+      </PremiumReveal>
     </section>
   );
 }

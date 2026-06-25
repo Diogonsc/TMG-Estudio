@@ -33,7 +33,7 @@ export function Footer() {
             href={MAPS_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-3 flex items-start gap-2.5 rounded-xl glass px-3 py-2.5 text-sm transition-colors hover:text-foreground"
+            className="mt-3 flex min-h-11 items-start gap-2.5 rounded-xl glass px-3 py-3 text-sm transition-colors hover:text-foreground sm:text-base"
           >
             <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-purple-neon" />
             <span className="leading-snug text-muted-foreground">
@@ -43,19 +43,21 @@ export function Footer() {
           </a>
         </div>
         <div>
-          <h3 className="font-display font-bold">Contato</h3>
-          <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
-            <li className="flex items-center gap-2">
-              <Phone className="h-4 w-4 text-purple-neon" /> {PHONE_DISPLAY}
+          <h3 className="font-display text-base font-bold sm:text-lg">Contato</h3>
+          <ul className="mt-4 space-y-1 text-sm text-muted-foreground sm:text-base">
+            <li className="flex min-h-11 items-center gap-3 py-1">
+              <Phone className="h-4 w-4 shrink-0 text-purple-neon" />
+              <span>{PHONE_DISPLAY}</span>
             </li>
             <li>
               <a
                 href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-foreground"
+                className="flex min-h-11 items-center gap-3 py-1 transition-colors hover:text-foreground"
               >
-                <FaWhatsapp className="h-4 w-4 text-purple-neon" /> WhatsApp
+                <FaWhatsapp className="h-4 w-4 shrink-0 text-purple-neon" />
+                <span>WhatsApp</span>
               </a>
             </li>
             <li>
@@ -63,9 +65,10 @@ export function Footer() {
                 href={INSTAGRAM_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-foreground"
+                className="flex min-h-11 items-center gap-3 py-1 transition-colors hover:text-foreground"
               >
-                <FaInstagram className="h-4 w-4 text-purple-neon" /> @tmgestudio
+                <FaInstagram className="h-4 w-4 shrink-0 text-purple-neon" />
+                <span>@tmgestudio</span>
               </a>
             </li>
             <li>
@@ -73,28 +76,31 @@ export function Footer() {
                 href={THREADS_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-foreground"
+                className="flex min-h-11 items-center gap-3 py-1 transition-colors hover:text-foreground"
               >
-                <FaThreads className="h-4 w-4 text-purple-neon" /> @tmgestudio
+                <FaThreads className="h-4 w-4 shrink-0 text-purple-neon" />
+                <span>@tmgestudio</span>
               </a>
             </li>
-            <li className="flex items-center gap-2">
-              <Mail className="h-4 w-4 text-purple-neon" /> {EMAIL}
+            <li className="flex min-h-11 items-center gap-3 py-1">
+              <Mail className="h-4 w-4 shrink-0 text-purple-neon" />
+              <span>{EMAIL}</span>
             </li>
             <li>
               <a
                 href={MAPS_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-foreground"
+                className="flex min-h-11 items-center gap-3 py-1 transition-colors hover:text-foreground"
               >
-                <MapPin className="h-4 w-4 shrink-0 text-purple-neon" /> {LOCATION}
+                <MapPin className="h-4 w-4 shrink-0 text-purple-neon" />
+                <span>{LOCATION}</span>
               </a>
             </li>
           </ul>
         </div>
         <div>
-          <h3 className="font-display font-bold">Localização</h3>
+          <h3 className="font-display text-base font-bold sm:text-lg">Localização</h3>
           <div className="mt-4 overflow-hidden rounded-2xl glass">
             <iframe
               title="Mapa TMG Estúdio - Mesquita"
@@ -106,7 +112,7 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div className="border-t border-white/10 py-6 text-center text-xs flex flex-col sm:flex-row gap-2 items-center justify-center">
+      <div className="border-t border-white/10 py-6 text-center text-sm flex flex-col sm:flex-row gap-3 items-center justify-center sm:text-base">
         © {new Date().getFullYear()} TMG Estúdio. Todos os direitos reservados.
         |{" "}
         <span className="text-purple-neon">
@@ -114,8 +120,8 @@ export function Footer() {
             href="https://wa.me/5521973819373"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-purple-neon hover:underline"
-            >
+            className="inline-flex min-h-11 items-center text-purple-neon hover:underline"
+          >
             Desenvolvido por{" "}
             Diogo Nascimento
           </a>{" "}

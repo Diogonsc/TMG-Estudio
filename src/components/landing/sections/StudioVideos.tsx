@@ -30,18 +30,13 @@ function VideoCard({
             muted
             loop
             playsInline
-            className="h-full w-full object-contain transition-[filter] duration-500 group-hover:brightness-[0.65]"
+            className="h-full w-full object-contain transition-all duration-500 group-hover:scale-[1.02] group-hover:brightness-75"
           />
-          <div className="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/25" />
-          <span className="pointer-events-none absolute inset-0 grid place-items-center opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-            <motion.span
-              className="grid h-14 w-14 place-items-center rounded-full border border-purple-500/30 bg-black/50 text-white backdrop-blur-sm shadow-[0_0_30px_rgba(168,85,247,0.25)]"
-              initial={{ scale: 0.85 }}
-              whileInView={{ scale: 1 }}
-              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            >
+          <div className="pointer-events-none absolute inset-0 bg-black/10 transition-colors duration-500 group-hover:bg-black/30" />
+          <span className="pointer-events-none absolute inset-0 grid place-items-center">
+            <span className="grid h-14 w-14 place-items-center rounded-full border border-white/20 bg-black/40 text-white opacity-80 backdrop-blur-sm transition-all duration-500 group-hover:scale-110 group-hover:border-purple-neon/40 group-hover:bg-black/60 group-hover:opacity-100 group-hover:shadow-[var(--glow-purple)]">
               <Play className="h-6 w-6 fill-white" />
-            </motion.span>
+            </span>
           </span>
         </div>
       </button>
@@ -169,7 +164,7 @@ export function StudioVideos() {
         title="Veja o TMG Estúdio em ação"
         subtitle="Conheça nossa estrutura, bastidores e produções através de vídeos reais gravados em nosso estúdio."
       />
-      <div className="mt-14 columns-2 gap-4 md:columns-3 [&>*]:mb-4">
+      <div className="mt-16 columns-2 gap-5 md:columns-3 md:gap-6 [&>*]:mb-5 md:[&>*]:mb-6">
         {STUDIO_VIDEOS.map((_, i) => (
           <VideoCard key={STUDIO_VIDEOS[i].src} index={i} onOpen={setActiveIndex} />
         ))}

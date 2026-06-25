@@ -116,6 +116,8 @@
   --animate-pulse-purple: pulse-purple 2.5s ease-out infinite;
   --animate-marquee: marquee 45s linear infinite;
   --animate-marquee-reverse: marquee-reverse 45s linear infinite;
+  --animate-marquee-slow: marquee 60s linear infinite;
+  --animate-marquee-slow-reverse: marquee-reverse 60s linear infinite;
 }
 
 @keyframes pulse-purple {
@@ -260,6 +262,48 @@
 
 @utility glow-purple {
   box-shadow: var(--glow-purple);
+}
+
+@utility premium-card {
+  min-height: 12.5rem;
+  border-radius: 1.5rem;
+  background: oklch(0.14 0.015 290 / 0.5);
+  backdrop-filter: blur(20px);
+  border: 1px solid oklch(1 0 0 / 0.08);
+  padding: 2rem;
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+
+  @media (width >= 40rem) {
+    padding: 2.25rem;
+    min-height: 13.5rem;
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--glow-purple);
+    border-color: oklch(0.66 0.22 303 / 0.2);
+  }
+}
+
+@utility service-card {
+  border-radius: 1.5rem;
+  background: oklch(0.14 0.015 290 / 0.5);
+  backdrop-filter: blur(20px);
+  border: 1px solid oklch(1 0 0 / 0.08);
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    scale 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+
+  &:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--glow-purple);
+    border-color: oklch(0.66 0.22 303 / 0.25);
+  }
 }
 
 @utility bg-grain {

@@ -46,6 +46,12 @@ export const STATS = [
   { value: 5, suffix: "★", label: "Estrelas no Google", decimals: 0 },
 ] as const;
 
+export const HERO_STATS = [
+  { value: 500, suffix: "+", label: "Podcasts Produzidos" },
+  { value: 1000, suffix: "+", label: "Horas Gravadas" },
+  { value: 200, suffix: "+", label: "Clientes Atendidos" },
+] as const;
+
 export const AUDIENCE_ITEMS: { icon: LucideIcon; title: string; desc: string }[] = [
   { icon: Briefcase, title: "Empreendedores", desc: "Fortaleça sua autoridade no mercado." },
   {
@@ -64,12 +70,32 @@ export const DIFFERENTIAL_ITEMS: { icon: LucideIcon; title: string; desc: string
   { icon: Zap, title: "Agilidade na Entrega", desc: "Processos organizados para acelerar resultados." },
 ];
 
-export const PROCESS_STEPS: { icon: LucideIcon; title: string }[] = [
-  { icon: Calendar, title: "Agendamento" },
-  { icon: Lightbulb, title: "Planejamento" },
-  { icon: Mic, title: "Gravação" },
-  { icon: Scissors, title: "Edição" },
-  { icon: Award, title: "Entrega" },
+export const PROCESS_STEPS: { icon: LucideIcon; title: string; desc: string }[] = [
+  {
+    icon: Calendar,
+    title: "Agendamento",
+    desc: "Escolha o melhor dia e horário.",
+  },
+  {
+    icon: Lightbulb,
+    title: "Planejamento",
+    desc: "Definimos o formato da gravação.",
+  },
+  {
+    icon: Mic,
+    title: "Gravação",
+    desc: "Produção profissional no estúdio.",
+  },
+  {
+    icon: Scissors,
+    title: "Edição",
+    desc: "Tratamento de áudio e vídeo.",
+  },
+  {
+    icon: Award,
+    title: "Entrega",
+    desc: "Receba seu conteúdo pronto.",
+  },
 ];
 
 export const GALLERY_IMAGES = [

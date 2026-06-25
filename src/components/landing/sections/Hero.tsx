@@ -1,11 +1,13 @@
 import { ArrowRight, Star } from "lucide-react";
 
 import { WHATSAPP_LINK } from "@/lib/site";
-import { Reveal } from "../primitives";
+import { AuroraBackground } from "../components/AuroraBackground";
+import { HERO_STATS } from "../data";
+import { BlurReveal, Counter, Reveal, ScaleReveal } from "../primitives";
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-[100dvh] w-full items-center justify-center overflow-x-clip overflow-y-hidden pt-24 pb-12 sm:min-h-screen sm:pt-28 sm:pb-16">
+    <section className="relative flex min-h-[100dvh] w-full items-center justify-center overflow-x-clip overflow-y-hidden pt-24 pb-16 sm:min-h-screen sm:pt-28 sm:pb-20">
       <video
         src="/videos/video-tmg.mp4"
         autoPlay
@@ -13,51 +15,76 @@ export function Hero() {
         loop
         playsInline
         aria-hidden
-        className="absolute inset-0 h-full w-full object-cover opacity-90"
+        className="absolute inset-0 z-0 h-full w-full scale-105 object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/85 to-background" />
+
+      {/* Overlay preto para contraste e legibilidade */}
+      <div className="absolute inset-0 z-[1] bg-black/55" />
+      <div className="absolute inset-0 z-[2] bg-gradient-to-b from-black/40 via-black/60 to-background" />
+
       <div
-        className="pointer-events-none absolute left-1/2 top-1/3 h-[min(100vw,28rem)] w-[min(100vw,28rem)] -translate-x-1/2 rounded-full blur-[80px] sm:h-[700px] sm:w-[700px] sm:blur-[120px]"
-        style={{ background: "radial-gradient(circle, oklch(0.5 0.2 290 / 0.35), transparent 70%)" }}
+        aria-hidden
+        className="absolute inset-0 z-[3]"
+        style={{
+          background:
+            "radial-gradient(ellipse 90% 80% at 50% 40%, transparent 30%, oklch(0.05 0.005 290 / 0.6) 100%)",
+        }}
       />
-      <div className="relative z-10 w-full max-w-4xl px-4 text-center sm:px-6">
-        <Reveal>
-          <div className="mx-auto mb-5 flex w-fit max-w-full flex-col items-center gap-1.5 rounded-full glass px-3 py-1.5 text-[11px] leading-snug sm:mb-6 sm:flex-row sm:gap-2 sm:px-3.5 sm:py-1.5 sm:text-xs">
-            <span className="flex shrink-0 text-purple-neon">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="h-3 w-3 fill-current sm:h-3.5 sm:w-3.5" />
-              ))}
-            </span>
-            <span className="text-center text-muted-foreground sm:text-left">
-              5.0 no Google · +100 episódios produzidos
-            </span>
-          </div>
-        </Reveal>
-        <Reveal delay={0.1}>
-          <h1 className="text-balance text-[1.75rem] font-extrabold leading-[1.1] sm:text-5xl md:text-6xl lg:text-7xl">
-            Seu podcast merece mais do que uma <span className="text-gradient">gravação</span>.
+
+      <AuroraBackground className="z-[4]" intensity="subtle" />
+
+      <div className="relative z-10 w-full max-w-5xl px-4 text-center sm:px-6">
+        <BlurReveal>
+          <h1 className="text-balance text-[2rem] font-extrabold leading-[1.05] tracking-tight text-white drop-shadow-[0_2px_32px_rgba(0,0,0,0.8)] sm:text-6xl md:text-7xl lg:text-8xl">
+            Seu podcast merece mais do que uma{" "}
+            <span className="text-gradient">gravação</span>.
           </h1>
-        </Reveal>
-        <Reveal delay={0.2}>
-          <p className="mx-auto mt-5 max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground sm:mt-6 sm:text-base md:text-lg">
+        </BlurReveal>
+
+        <Reveal delay={0.15}>
+          <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-white/80 sm:mt-8 sm:text-lg md:text-xl">
             Transformamos conversas em conteúdo profissional que fortalece sua autoridade, gera
             confiança e posiciona sua marca.
           </p>
         </Reveal>
-        <Reveal delay={0.3}>
-          <div className="mt-8 flex w-full flex-col gap-3 sm:mt-9 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-4">
+
+        <ScaleReveal delay={0.25}>
+          <div className="mx-auto mt-8 w-fit max-w-full rounded-2xl border border-white/10 bg-black/40 px-5 py-5 backdrop-blur-sm sm:mt-10 sm:px-8 sm:py-6">
+            <div className="flex items-center justify-center gap-2">
+              <span className="flex text-purple-neon">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-current sm:h-5 sm:w-5" />
+                ))}
+              </span>
+              <span className="text-sm font-semibold text-white sm:text-base">5.0 no Google</span>
+            </div>
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 sm:gap-x-12">
+              {HERO_STATS.map((stat) => (
+                <div key={stat.label} className="text-center">
+                  <p className="font-display text-2xl font-extrabold text-gradient sm:text-3xl">
+                    <Counter to={stat.value} suffix={stat.suffix} />
+                  </p>
+                  <p className="mt-1 text-xs text-white/60 sm:text-sm">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </ScaleReveal>
+
+        <Reveal delay={0.35}>
+          <div className="mt-10 flex w-full flex-col gap-3 sm:mt-12 sm:flex-row sm:items-center sm:justify-center sm:gap-4">
             <a
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="group btn-primary animate-pulse-purple inline-flex w-full items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-sm font-bold hover:scale-[1.02] hover:brightness-110 hover:animate-none active:scale-[0.98] motion-reduce:animate-none sm:w-auto sm:px-8 sm:py-4 sm:text-base"
+              className="group btn-primary inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl px-8 py-4 text-sm font-bold shadow-[var(--glow-purple)] transition-transform duration-300 hover:scale-[1.03] hover:brightness-110 active:scale-[0.98] sm:w-auto sm:min-h-12 sm:px-10 sm:text-base"
             >
               Agendar Gravação
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
               href="#sobre"
-              className="btn-outline inline-flex w-full items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-sm font-bold hover:scale-[1.02] hover:border-purple-neon hover:bg-purple-neon/20 hover:shadow-[var(--glow-purple)] active:scale-[0.98] sm:w-auto sm:px-8 sm:py-4 sm:text-base"
+              className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl border-2 border-white/30 bg-transparent px-8 py-4 text-sm font-bold text-white transition-all duration-300 hover:scale-[1.02] hover:border-purple-neon hover:bg-purple-neon/10 active:scale-[0.98] sm:w-auto sm:min-h-12 sm:px-10 sm:text-base"
             >
               Ver Estrutura
             </a>

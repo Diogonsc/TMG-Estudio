@@ -1,33 +1,36 @@
+import { AuroraBackground } from "../components/AuroraBackground";
 import { SectionHeader } from "../components/SectionHeader";
 import { DIFFERENTIAL_ITEMS } from "../data";
-import { FloatingOrb, Reveal } from "../primitives";
+import { PremiumReveal } from "../primitives";
 
 export function Differentials() {
   return (
-    <section className="section-shell max-w-5xl overflow-x-clip">
-      <FloatingOrb className="-right-20 bottom-0" size={400} delay={2} />
-      <SectionHeader
-        kicker="Diferenciais"
-        title={
-          <>
-            Por que o TMG entrega um <span className="text-gradient">resultado diferente</span>?
-          </>
-        }
-      />
-      <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2">
-        {DIFFERENTIAL_ITEMS.map((it, i) => (
-          <Reveal key={it.title} delay={i * 0.08}>
-            <div className="flex h-full gap-4 rounded-3xl glass p-7 transition-transform hover:-translate-y-2">
-              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-gradient-purple shadow-[var(--glow-purple)]">
-                <it.icon className="h-6 w-6 text-white" />
-              </span>
-              <div>
-                <h3 className="font-display text-lg font-bold">{it.title}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{it.desc}</p>
+    <section className="section-shell relative max-w-5xl overflow-x-clip">
+      <AuroraBackground intensity="subtle" />
+      <div className="relative z-10">
+        <SectionHeader
+          kicker="Diferenciais"
+          title={
+            <>
+              Por que o TMG entrega um <span className="text-gradient">resultado diferente</span>?
+            </>
+          }
+        />
+        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6">
+          {DIFFERENTIAL_ITEMS.map((it, i) => (
+            <PremiumReveal key={it.title} delay={i * 0.08}>
+              <div className="group premium-card flex h-full gap-5">
+                <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-gradient-purple shadow-[var(--glow-purple)] transition-transform duration-500 group-hover:scale-105">
+                  <it.icon className="h-7 w-7 text-white" />
+                </span>
+                <div className="flex flex-col justify-center">
+                  <h3 className="font-display text-xl font-bold">{it.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{it.desc}</p>
+                </div>
               </div>
-            </div>
-          </Reveal>
-        ))}
+            </PremiumReveal>
+          ))}
+        </div>
       </div>
     </section>
   );

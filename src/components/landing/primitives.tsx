@@ -25,6 +25,50 @@ export function Reveal({
   );
 }
 
+export function BlurReveal({
+  children,
+  delay = 0,
+  className,
+}: {
+  children: ReactNode;
+  delay?: number;
+  className?: string;
+}) {
+  return (
+    <motion.div
+      className={className}
+      initial={{ opacity: 0, y: 24, filter: "blur(12px)" }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+export function ScaleReveal({
+  children,
+  delay = 0,
+  className,
+}: {
+  children: ReactNode;
+  delay?: number;
+  className?: string;
+}) {
+  return (
+    <motion.div
+      className={className}
+      initial={{ opacity: 0, scale: 0.92 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
 export function PremiumReveal({
   children,
   delay = 0,
@@ -99,12 +143,12 @@ export function MouseSpotlight() {
   return (
     <motion.div
       aria-hidden
-      className="pointer-events-none fixed z-30 hidden h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full md:block"
+      className="pointer-events-none fixed z-30 hidden h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full md:block"
       style={{
         left: sx,
         top: sy,
         background:
-          "radial-gradient(circle, oklch(0.66 0.22 303 / 0.08), transparent 60%)",
+          "radial-gradient(circle, oklch(0.66 0.22 303 / 0.1), oklch(0.55 0.24 320 / 0.04) 40%, transparent 65%)",
       }}
     />
   );

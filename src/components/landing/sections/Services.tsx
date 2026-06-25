@@ -8,7 +8,8 @@ import service05 from "@/assets/service-05.png";
 import service06 from "@/assets/service-06.png";
 
 import { SectionHeader } from "../components/SectionHeader";
-import { Reveal } from "../primitives";
+import { SpotlightCard } from "../components/SpotlightCard";
+import { PremiumReveal } from "../primitives";
 
 const services = [
   {
@@ -53,28 +54,28 @@ export function Services() {
   return (
     <section id="servicos" className="section-shell overflow-x-clip">
       <SectionHeader kicker="Serviços" title="Tudo o que sua marca precisa" />
-      <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-7 lg:grid-cols-3">
         {services.map((it, i) => (
-          <Reveal key={it.title} delay={(i % 3) * 0.08}>
-            <div className="group h-full overflow-hidden rounded-3xl glass transition-all hover:-translate-y-2 hover:glow-purple">
-              <div className="relative h-44 overflow-hidden">
+          <PremiumReveal key={it.title} delay={(i % 3) * 0.08}>
+            <SpotlightCard className="service-card group h-full overflow-hidden rounded-3xl">
+              <div className="relative h-48 overflow-hidden">
                 <img
                   src={it.img}
                   alt={it.title}
                   loading="lazy"
-                  className="h-full w-full object-cover opacity-70 transition-transform duration-700 group-hover:scale-110"
+                  className="h-full w-full object-cover opacity-75 transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
-                <span className="absolute bottom-3 left-4 grid h-10 w-10 place-items-center rounded-xl bg-gradient-purple shadow-[var(--glow-purple)]">
+                <span className="absolute bottom-4 left-4 grid h-11 w-11 place-items-center rounded-xl bg-gradient-purple shadow-[var(--glow-purple)] transition-transform duration-500 group-hover:scale-105">
                   <it.icon className="h-5 w-5 text-white" />
                 </span>
               </div>
-              <div className="p-6">
-                <h3 className="font-display text-lg font-bold">{it.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{it.desc}</p>
+              <div className="p-7">
+                <h3 className="font-display text-xl font-bold">{it.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{it.desc}</p>
               </div>
-            </div>
-          </Reveal>
+            </SpotlightCard>
+          </PremiumReveal>
         ))}
       </div>
     </section>

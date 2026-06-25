@@ -11,7 +11,7 @@ export function Gallery() {
   return (
     <section id="galeria" className="section-shell overflow-x-clip">
       <SectionHeader kicker="Galeria" title="Por dentro do estúdio" />
-      <div className="mt-14 columns-2 gap-4 md:columns-3 [&>*]:mb-4">
+      <div className="mt-16 columns-2 gap-5 md:columns-3 md:gap-6 [&>*]:mb-5 md:[&>*]:mb-6">
         {GALLERY_IMAGES.map((im, i) => (
           <Reveal key={im.src} delay={(i % 3) * 0.06}>
             <button
